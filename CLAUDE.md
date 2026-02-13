@@ -21,3 +21,6 @@ Do **not** add frequently-changing content to this file such as:
 - Configuration details that evolve with code
 
 This file is for stable rules and conventions. Use code comments or README for implementation details.
+
+### 4. Content Configuration
+All site text (menu, prices, hours, statement copy) lives in `content.json` at the project root. The site supports two languages (`en` and `fr`) toggled client-side. Shared data (links, address) is at the top level; language-specific text is nested under `en`/`fr` keys. To update menu items or prices, edit `content.json` — no JSX changes needed.

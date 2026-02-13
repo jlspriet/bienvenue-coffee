@@ -1,43 +1,45 @@
-# Next.js on Netlify Platform Starter
+# Bienvenue Coffee Shop
 
-[Live Demo](https://nextjs-platform-starter.netlify.app/)
+Single-page website for [Bienvenue Coffee Shop](https://instagram.com/bienvenue_coffeeshop) — a specialty coffee shop at 79 rue Esquermoise, Lille, France.
 
-A modern starter based on Next.js 16 (App Router), Tailwind, and [Netlify Core Primitives](https://docs.netlify.com/core/overview/#develop) (Edge Functions, Image CDN, Blob Store).
+## Tech Stack
 
-In this site, Netlify Core Primitives are used both implictly for running Next.js features (e.g. Route Handlers, image optimization via `next/image`, and more) and also explicitly by the user code.
+- **Next.js 16** (App Router) + **React 19**
+- **Tailwind CSS 4** + **DaisyUI 5**
+- Deployed on **Netlify**
 
-Implicit usage means you're using any Next.js functionality and everything "just works" when deployed - all the plumbing is done for you. Explicit usage is framework-agnostic and typically provides more features than what Next.js exposes.
+## Getting Started
 
-## Deploying to Netlify
-
-Click the button below to deploy this template to your Netlify account.
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/netlify-templates/next-platform-starter)
-
-## Developing Locally
-
-1. Clone this repository, then run `npm install` in its root directory.
-
-2. For the starter to have full functionality locally (e.g. edge functions, blob store), please ensure you have an up-to-date version of Netlify CLI. Run:
-
-```
-npm install netlify-cli@latest -g
+```bash
+npm install
+npm run dev
 ```
 
-3. Link your local repository to the deployed Netlify site. This will ensure you're using the same runtime version for both local development and your deployed site.
+Open [http://localhost:3000](http://localhost:3000).
+
+## Editing Content
+
+All text content (menu, prices, hours, statement) lives in **`content.json`** at the project root. The site supports **English** and **French** — users can toggle between them via a button in the top-right corner.
+
+### Structure
 
 ```
-netlify link
+content.json
+├── links          # Instagram and European Coffee Trip URLs
+├── address        # Shared across both languages
+├── en             # English text
+│   ├── statement  # About/statement paragraph
+│   ├── menu       # Menu title, sections (with items + prices), footer
+│   └── hours      # Opening hours
+└── fr             # French text (same structure as en)
 ```
 
-4. Then, run the Next.js development server via Netlify CLI:
+To update menu items or prices, edit `content.json` — no code changes needed.
 
+## Build
+
+```bash
+npm run build
 ```
-netlify dev
-```
 
-If your browser doesn't navigate to the site automatically, visit [localhost:8888](http://localhost:8888).
-
-## Resources
-
-- Check out the [Next.js on Netlify docs](https://docs.netlify.com/frameworks/next-js/overview/)
+Use `CHECK_BUILD=1 npm run build` to build to a separate `.next-check` directory (avoids conflicts with a running dev server).
