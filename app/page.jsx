@@ -8,7 +8,7 @@ const photos = [
     { src: '/images/photo/DSC04533.jpg', alt: 'Bienvenue Coffee Shop' },
     { src: '/images/photo/DSC04606.jpg', alt: 'Bienvenue Coffee Shop' },
     { src: '/images/photo/DSC04669.jpg', alt: 'Bienvenue Coffee Shop' },
-    { src: '/images/photo/P2.jpg', alt: 'Bienvenue Coffee Shop' },
+    { src: '/images/photo/P1.jpg', alt: 'Bienvenue Coffee Shop' },
     { src: '/images/photo/P5.jpg', alt: 'Bienvenue Coffee Shop' },
     { src: '/images/photo/DSC04530.jpg', alt: 'Bienvenue Coffee Shop' },
 ];
@@ -70,19 +70,19 @@ export default function Home() {
                     </div>
                 </div>
                 {/* Logo */}
-                <div ref={heroLogoRef} className="flex justify-center mt-2">
+                <div ref={heroLogoRef} className="flex justify-center">
                     <Image
                         src="/images/logos/BIENVENUE_Logo_PNG.png"
                         alt="Bienvenue Coffee Shop"
                         width={1080}
                         height={1080}
-                        className="w-72 sm:w-80 h-auto"
+                        className="w-72 sm:w-[22rem] h-auto"
                         priority
                     />
                 </div>
 
                 {/* Photo Grid */}
-                <section className="mt-8">
+                <section className="mt-4">
                     <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
                         {photos.map((photo, i) => (
                             <div
