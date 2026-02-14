@@ -1,16 +1,16 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import content from '../content.json';
 
 const photos = [
-    { src: '/images/logo.png', alt: 'Bienvenue Coffee Shop storefront at 79 rue Esquermoise' },
-    { src: '/images/photo-1.jpg', alt: 'Interior seating area with skylight and signature B logo' },
-    { src: '/images/photo-6.jpg', alt: 'View from upstairs mezzanine' },
-    { src: '/images/photo-2.jpg', alt: 'Counter bar seating area' },
-    { src: '/images/photo-3.jpg', alt: 'Counter and menu board' },
-    { src: '/images/photo-4.jpg', alt: 'Building exterior on rue Esquermoise' },
+    { src: '/images/photo/DSC04533.jpg', alt: 'Bienvenue Coffee Shop' },
+    { src: '/images/photo/DSC04606.jpg', alt: 'Bienvenue Coffee Shop' },
+    { src: '/images/photo/DSC04669.jpg', alt: 'Bienvenue Coffee Shop' },
+    { src: '/images/photo/P2.jpg', alt: 'Bienvenue Coffee Shop' },
+    { src: '/images/photo/P5.jpg', alt: 'Bienvenue Coffee Shop' },
+    { src: '/images/photo/DSC04530.jpg', alt: 'Bienvenue Coffee Shop' },
 ];
 
 function InstagramIcon({ className }) {
@@ -26,54 +26,74 @@ function InstagramIcon({ className }) {
 
 export default function Home() {
     const [lang, setLang] = useState('fr');
+    const [scrolled, setScrolled] = useState(false);
+    const heroLogoRef = useRef(null);
     const t = content[lang];
 
-    return (
-        <div className="min-h-screen bg-base-100 text-base-content px-6 py-16 sm:px-8 relative">
-            {/* Language Toggle */}
-            <div className="fixed top-4 right-4 z-10">
-                <div className="join">
-                    <button
-                        className={`join-item btn btn-sm ${lang === 'fr' ? 'btn-active' : 'btn-ghost'}`}
-                        onClick={() => setLang('fr')}
-                    >
-                        FR
-                    </button>
-                    <button
-                        className={`join-item btn btn-sm ${lang === 'en' ? 'btn-active' : 'btn-ghost'}`}
-                        onClick={() => setLang('en')}
-                    >
-                        EN
-                    </button>
-                </div>
-            </div>
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => setScrolled(!entry.isIntersecting),
+            { threshold: 0 }
+        );
+        if (heroLogoRef.current) observer.observe(heroLogoRef.current);
+        return () => observer.disconnect();
+    }, []);
 
+    return (
+        <div className="min-h-screen bg-base-100 text-base-content px-6 pt-4 pb-16 sm:px-8">
             <div className="max-w-2xl mx-auto">
-                {/* Logo */}
-                <div className="flex justify-center">
-                    <div className="w-24 h-24 rounded-full bg-base-200 border border-base-300 flex items-center justify-center text-base-content/40 text-sm">
-                        Logo
+                {/* Sticky Top Bar */}
+                <div className="sticky top-0 z-10 flex items-center justify-between py-2 bg-base-100">
+                    <div className="w-[72px]" />
+                    <div className={`transition-opacity duration-200 ${scrolled ? 'opacity-100' : 'opacity-0'}`}>
+                        <Image
+                            src="/images/logos/BIENVENUE_Isotype_colored.png"
+                            alt="Bienvenue"
+                            width={1080}
+                            height={1080}
+                            className="w-[4.5rem] h-[4.5rem]"
+                        />
+                    </div>
+                    <div className="join join-horizontal rounded-full border border-base-300">
+                        <button
+                            className={`join-item btn btn-sm rounded-full border-0 ${lang === 'fr' ? 'btn-active' : 'btn-ghost'}`}
+                            onClick={() => setLang('fr')}
+                        >
+                            FR
+                        </button>
+                        <button
+                            className={`join-item btn btn-sm rounded-full border-0 ${lang === 'en' ? 'btn-active' : 'btn-ghost'}`}
+                            onClick={() => setLang('en')}
+                        >
+                            EN
+                        </button>
                     </div>
                 </div>
-
-                {/* Title */}
-                <h1 className="mt-8 text-center text-5xl sm:text-6xl font-light tracking-tight">
-                    Bienvenue
-                </h1>
-                <p className="mt-2 text-center text-lg sm:text-xl text-base-content/50 tracking-widest uppercase">
-                    Coffee Shop
-                </p>
+                {/* Logo */}
+                <div ref={heroLogoRef} className="flex justify-center mt-2">
+                    <Image
+                        src="/images/logos/BIENVENUE_Logo_PNG.png"
+                        alt="Bienvenue Coffee Shop"
+                        width={1080}
+                        height={1080}
+                        className="w-72 sm:w-80 h-auto"
+                        priority
+                    />
+                </div>
 
                 {/* Photo Grid */}
-                <section className="mt-16">
+                <section className="mt-8">
                     <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
                         {photos.map((photo, i) => (
-                            <div key={i} className="aspect-square relative overflow-hidden rounded-lg">
+                            <div
+                                key={i}
+                                className="aspect-square relative overflow-hidden rounded-lg"
+                            >
                                 <Image
                                     src={photo.src}
                                     alt={photo.alt}
                                     fill
-                                    className="object-cover"
+                                    className="object-cover hover:scale-105 transition-transform duration-300"
                                     sizes="(max-width: 640px) 50vw, 33vw"
                                 />
                             </div>
@@ -89,22 +109,18 @@ export default function Home() {
                 </section>
 
                 {/* Menu */}
-                <section className="mt-16">
-                    <h2 className="text-center text-2xl font-light tracking-wide mb-8">
-                        {t.menu.title}
-                    </h2>
-
+                <section className="mt-16 max-w-md mx-auto">
                     {t.menu.sections.map((section, i) => (
                         <div key={i} className={i > 0 ? 'mt-8' : ''}>
-                            <h3 className="text-sm font-semibold tracking-widest uppercase text-base-content/40 mb-4">
+                            <h3 className="text-xl font-normal text-[#bf8e39]/70 mb-3 font-serif">
                                 {section.title}
                             </h3>
-                            <div className="space-y-3">
+                            <div className="space-y-1">
                                 {section.items.map((item, j) => (
                                     <div key={j} className="flex items-baseline gap-2">
-                                        <span className="font-medium">{item.name}</span>
+                                        <span className="font-normal font-display uppercase tracking-wider text-sm">{item.name}</span>
                                         <span className="flex-1 border-b border-dotted border-base-300" />
-                                        <span className="text-base-content/60">{item.price}</span>
+                                        <span className="text-base-content/60 font-display text-sm">{item.price}</span>
                                     </div>
                                 ))}
                             </div>
@@ -156,6 +172,7 @@ export default function Home() {
                     </div>
                 </footer>
             </div>
+
         </div>
     );
 }
