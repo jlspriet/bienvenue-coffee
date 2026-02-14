@@ -40,10 +40,10 @@ export default function Home() {
     }, []);
 
     return (
-        <div className="min-h-screen bg-[#F9F9F9] text-base-content px-6 pt-4 pb-16 sm:px-8">
+        <div className="min-h-screen bg-[#FCFCFC] text-base-content px-6 pt-4 pb-16 sm:px-8">
             <div className="max-w-2xl mx-auto">
                 {/* Sticky Top Bar */}
-                <div className="sticky top-0 z-10 flex items-center justify-between py-2 bg-[#F9F9F9]">
+                <div className={`sticky top-0 z-10 flex items-center justify-between py-2 transition-colors duration-200 ${scrolled ? 'bg-[#FCFCFC]' : ''}`}>
                     <div className="w-[72px]" />
                     <div className={`transition-opacity duration-200 ${scrolled ? 'opacity-100' : 'opacity-0'}`}>
                         <Image
@@ -72,7 +72,7 @@ export default function Home() {
                 {/* Logo */}
                 <div ref={heroLogoRef} className="flex justify-center">
                     <Image
-                        src="/images/logos/BIENVENUE_Logo_PNG.png"
+                        src="/images/logos/BIENVENUE_Logo_PNG-cropped.png"
                         alt="Bienvenue Coffee Shop"
                         width={1080}
                         height={1080}
@@ -82,7 +82,7 @@ export default function Home() {
                 </div>
 
                 {/* Photo Grid */}
-                <section className="mt-4">
+                <section className="mt-16">
                     <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
                         {photos.map((photo, i) => (
                             <div
@@ -102,14 +102,14 @@ export default function Home() {
                 </section>
 
                 {/* Statement */}
-                <section className="mt-16 text-center">
-                    <p className="text-base-content/70 leading-relaxed">
+                <section className="mt-16 max-w-sm mx-auto">
+                    <p className="text-base-content/70 leading-snug text-left text-sm">
                         {t.statement}
                     </p>
                 </section>
 
                 {/* Menu */}
-                <section className="mt-16 max-w-md mx-auto">
+                <section className="mt-16 max-w-sm mx-auto">
                     {t.menu.sections.map((section, i) => (
                         <div key={i} className={i > 0 ? 'mt-10' : ''}>
                             <h3 className="text-xl font-[550] text-[#bf8e39]/70 mb-4 font-serif">
