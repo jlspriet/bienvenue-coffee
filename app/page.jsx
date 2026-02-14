@@ -43,7 +43,7 @@ export default function Home() {
         <div className="min-h-screen bg-[#FCFCFC] text-base-content px-6 pt-4 pb-16 sm:px-8">
             <div className="max-w-2xl mx-auto">
                 {/* Sticky Top Bar */}
-                <div className={`sticky top-0 z-10 flex items-center justify-between py-1 transition-colors duration-200 ${scrolled ? 'bg-[#FCFCFC]' : ''}`}>
+                <div className={`sticky top-0 z-10 flex items-center justify-between py-2 transition-colors duration-200 ${scrolled ? 'bg-[#FCFCFC]' : ''}`}>
                     <div className="w-[68px]" />
                     <div className={`transition-opacity duration-200 ${scrolled ? 'opacity-100' : 'opacity-0'}`}>
                         <Image
