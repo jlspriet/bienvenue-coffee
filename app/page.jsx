@@ -43,15 +43,15 @@ export default function Home() {
         <div className="min-h-screen bg-[#FCFCFC] text-base-content px-6 pt-4 pb-16 sm:px-8">
             <div className="max-w-2xl mx-auto">
                 {/* Sticky Top Bar */}
-                <div className={`sticky top-0 z-10 flex items-center justify-between py-2 transition-colors duration-200 ${scrolled ? 'bg-[#FCFCFC]' : ''}`}>
-                    <div className="w-[72px]" />
+                <div className={`sticky top-0 z-10 flex items-center justify-between py-1 transition-colors duration-200 ${scrolled ? 'bg-[#FCFCFC]' : ''}`}>
+                    <div className="w-[68px]" />
                     <div className={`transition-opacity duration-200 ${scrolled ? 'opacity-100' : 'opacity-0'}`}>
                         <Image
-                            src="/images/logos/BIENVENUE_Isotype_colored.png"
+                            src="/images/logos/BIENVENUE_Isotype_colored-cropped.png"
                             alt="Bienvenue"
                             width={1080}
                             height={1080}
-                            className="w-[4.5rem] h-[4.5rem]"
+                            className="w-10 h-10"
                         />
                     </div>
                     <div className="join join-horizontal rounded-full border border-base-300">
