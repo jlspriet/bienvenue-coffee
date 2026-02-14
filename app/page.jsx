@@ -40,10 +40,10 @@ export default function Home() {
     }, []);
 
     return (
-        <div className="min-h-screen bg-base-100 text-base-content px-6 pt-4 pb-16 sm:px-8">
+        <div className="min-h-screen bg-[#F9F9F9] text-base-content px-6 pt-4 pb-16 sm:px-8">
             <div className="max-w-2xl mx-auto">
                 {/* Sticky Top Bar */}
-                <div className="sticky top-0 z-10 flex items-center justify-between py-2 bg-base-100">
+                <div className="sticky top-0 z-10 flex items-center justify-between py-2 bg-[#F9F9F9]">
                     <div className="w-[72px]" />
                     <div className={`transition-opacity duration-200 ${scrolled ? 'opacity-100' : 'opacity-0'}`}>
                         <Image
@@ -111,14 +111,14 @@ export default function Home() {
                 {/* Menu */}
                 <section className="mt-16 max-w-md mx-auto">
                     {t.menu.sections.map((section, i) => (
-                        <div key={i} className={i > 0 ? 'mt-8' : ''}>
-                            <h3 className="text-xl font-normal text-[#bf8e39]/70 mb-3 font-serif">
+                        <div key={i} className={i > 0 ? 'mt-10' : ''}>
+                            <h3 className="text-xl font-[550] text-[#bf8e39]/70 mb-4 font-serif">
                                 {section.title}
                             </h3>
-                            <div className="space-y-1">
+                            <div className="space-y-0">
                                 {section.items.map((item, j) => (
                                     <div key={j} className="flex items-baseline gap-2">
-                                        <span className="font-normal font-display uppercase tracking-wider text-sm">{item.name}</span>
+                                        <span className="font-medium font-display uppercase tracking-wide text-sm">{item.name}</span>
                                         <span className="flex-1 border-b border-dotted border-base-300" />
                                         <span className="text-base-content/60 font-display text-sm">{item.price}</span>
                                     </div>
@@ -165,11 +165,15 @@ export default function Home() {
                             <p key={i}>{line}</p>
                         ))}
                     </div>
-                    <div>
-                        {content.address.map((line, i) => (
-                            <p key={i}>{line}</p>
-                        ))}
-                    </div>
+                    <a
+                        href="https://maps.google.com/?q=79+rue+Esquermoise,+59800+Lille,+France"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 hover:text-base-content/70 transition-colors"
+                    >
+                        <span>📍</span>
+                        <span>{content.address.join(', ')}</span>
+                    </a>
                 </footer>
             </div>
 

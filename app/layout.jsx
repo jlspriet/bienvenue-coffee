@@ -9,7 +9,7 @@ export default function RootLayout({ children }) {
     return (
         <html lang="en" data-theme="light">
             <head>
-                <link rel="icon" href="/favicon.svg" sizes="any" />
+                <link rel="icon" href="/images/logos/favicon.png" />
             </head>
             <body className="antialiased">
                 {children}
