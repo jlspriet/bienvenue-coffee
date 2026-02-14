@@ -41,9 +41,17 @@ export default function Home() {
 
     return (
         <div className="min-h-screen bg-[#FCFCFC] text-base-content px-6 pt-4 pb-16 sm:px-8">
-            <div className="max-w-2xl mx-auto">
-                {/* Sticky Top Bar */}
-                <div className={`sticky top-0 z-10 flex items-center justify-between py-2 transition-colors duration-200 ${scrolled ? 'bg-[#FCFCFC]' : ''}`}>
+            <Image
+                src="/images/logos/Blogo-half.png"
+                alt=""
+                width={600}
+                height={600}
+                className="fixed top-14 left-0 w-64 h-auto opacity-3 pointer-events-none select-none"
+                priority
+            />
+            {/* Sticky Top Bar — full width */}
+            <div className={`sticky top-0 z-10 h-14 -mx-6 px-6 sm:-mx-8 sm:px-8 transition-colors duration-200 ${scrolled ? 'bg-[#FCFCFC]' : ''}`}>
+                <div className="max-w-2xl mx-auto h-full flex items-center justify-between">
                     <div className="w-[68px]" />
                     <div className={`transition-opacity duration-200 ${scrolled ? 'opacity-100' : 'opacity-0'}`}>
                         <Image
@@ -56,19 +64,21 @@ export default function Home() {
                     </div>
                     <div className="join join-horizontal rounded-full border border-base-300">
                         <button
-                            className={`join-item btn btn-sm rounded-full border-0 ${lang === 'fr' ? 'btn-active' : 'btn-ghost'}`}
+                            className={`join-item btn btn-xs rounded-full border-0 text-xs font-light ${lang === 'fr' ? 'btn-active' : 'btn-ghost'}`}
                             onClick={() => setLang('fr')}
                         >
-                            FR
+                            fr
                         </button>
                         <button
-                            className={`join-item btn btn-sm rounded-full border-0 ${lang === 'en' ? 'btn-active' : 'btn-ghost'}`}
+                            className={`join-item btn btn-xs rounded-full border-0 text-xs font-light ${lang === 'en' ? 'btn-active' : 'btn-ghost'}`}
                             onClick={() => setLang('en')}
                         >
-                            EN
+                            en
                         </button>
                     </div>
                 </div>
+            </div>
+            <div className="max-w-2xl mx-auto">
                 {/* Logo */}
                 <div ref={heroLogoRef} className="flex justify-center">
                     <Image
