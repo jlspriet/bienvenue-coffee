@@ -33,6 +33,85 @@
       ],
       "footer": "And much more on our full menu…"
     },
+    "fullMenu": {
+      "pageTitle": "Our Menu",
+      "sections": [
+        {
+          "title": "White Coffees",
+          "items": [
+            { "name": "Le Noisette", "description": "The classic. No wrong notes: an espresso with a touch of milk.", "price": "3,80€" },
+            { "name": "Le Junior : le Cortado", "description": "A double with the same amount of milk, no more, no less (10cl).", "price": "4,00€" },
+            { "name": "Save the Cappuccino !", "description": "An espresso with a bit of milk and lots of foam. Cocoa or cinnamon (180ml).", "price": "5,00€" },
+            { "name": "Flat White", "description": "A double espresso blended with 150ml of milk to keep a beautiful coffee note.", "price": "5,50€" },
+            { "name": "Le Latte", "description": "30ml of espresso blended with 240ml of milk for generosity.", "price": "5,00€" },
+            { "name": "Latte Caramel Beurre Salé Maison", "description": "30ml espresso, 180ml milk, house-made salted butter caramel.", "price": "6,50€" },
+            { "name": "Mokkaccino", "description": "30ml espresso, 180ml hot chocolate.", "price": "5,50€" },
+            { "name": "Iced Latte", "description": "Ice cubes, milk, and an espresso poured on top.", "price": "5,00€" },
+            { "name": "Café Viennois", "description": "30ml espresso in 210ml milk, whipped cream.", "price": "" }
+          ]
+        },
+        {
+          "title": "Non-Coffee",
+          "items": [
+            { "name": "Unami : thés et infusions", "price": "5,50€" },
+            { "name": "Chocolat Chaud Valrhona", "description": "180ml milk, chocolate.", "price": "5,50€" },
+            { "name": "Chocolat Viennois", "description": "130ml milk, chocolate, whipped cream.", "price": "5,50€" },
+            { "name": "Jus d'Orange BIO 25cl", "price": "4,50€" },
+            { "name": "Sodas Uma BIO", "price": "4,50€" },
+            { "name": "Matcha Latte BIO", "price": "6,50€" },
+            { "name": "Chai Latte BIO", "price": "5,50€" },
+            { "name": "Ube Latte BIO", "price": "5,50€" },
+            { "name": "Latte Sésame Noir BIO", "price": "5,50€" },
+            { "name": "Pumpkin Latte BIO", "price": "5,50€" },
+            { "name": "Golden Latte BIO", "price": "5,50€" }
+          ]
+        },
+        {
+          "title": "Expressos",
+          "items": [
+            { "name": "Quindío Gourmand", "description": "The gourmet espresso from Colombia — washed, very balanced, with dark chocolate notes.", "price": "2,80€" },
+            { "name": "Tanat \"Alo\"", "description": "An Ethiopian coffee — natural, straight from the thick jasmine-scented air of the Benso region. Beautiful acidity notes, a rather soft and aromatic coffee with citrus notes.", "price": "4,00€" },
+            { "name": "Typikah \"Tatacoa\"", "description": "A very beautiful Colombian coffee — natural fermented, from Nestor Lasso, straight from the Huila department south of Bogota, with blood orange and floral notes.", "price": "4,00€" },
+            { "name": "Tanat \"Kawa Blend\"", "description": "Honduras, Brazil & Guatemala. Washed & natural. Notes: chocolate & hazelnut.", "price": "4,00€" }
+          ]
+        },
+        {
+          "title": "Slow Coffee (V60)",
+          "items": [
+            { "name": "People Possession \"PPX\"", "description": "Ethiopia & Colombia. Natural / co-fermented. Notes: peach & nectarine.", "price": "7,00€" },
+            { "name": "People Possession \"Elto Elrora\"", "description": "Ethiopia. Natural. Notes: dried fruits, peach, black tea.", "price": "7,00€" },
+            { "name": "People Possession \"CIA\"", "description": "Colombia & Ethiopia. Washed / co-fermented. Notes: cherry, orange, banana bread.", "price": "7,00€" },
+            { "name": "Tanat \"Alo\"", "description": "Ethiopia. Natural. Notes: blackberry, orange zest, black tea.", "price": "7,00€" }
+          ]
+        },
+        {
+          "title": "Café au Comptoir",
+          "items": [
+            { "name": "Expresso", "description": "30ml", "price": "2,50€" },
+            { "name": "Double Expresso", "description": "60ml", "price": "3,50€" },
+            { "name": "Noisette", "price": "3,80€" },
+            { "name": "Macchiato", "price": "3,80€" }
+          ]
+        },
+        {
+          "title": "Et ceux qu'on aime bcp",
+          "items": [
+            { "name": "Cold Brew", "description": "Cold-brewed coffee steeped overnight.", "price": "5,00€" },
+            { "name": "Le Bicerin", "description": "Hazelnut, pistachio, or speculoos.", "price": "6,50€" },
+            { "name": "Crémoso !", "description": "Milk, house-made coffee foam.", "price": "6,00€" },
+            { "name": "Le Batch Brew", "description": "A big, simple filter coffee with lovely chocolate notes, soft. Perfect in the morning with a croissant.", "price": "3,80€" }
+          ]
+        }
+      ],
+      "supplements": {
+        "title": "Supplements",
+        "items": [
+          { "name": "Lait Végétaux", "description": "Oat, almond, coconut.", "price": "0,50€" },
+          { "name": "Sirops Maison", "description": "Vanilla, caramel, hazelnut, and seasonal house-made syrups (made with raw cane sugar).", "price": "0,50€" },
+          { "name": "Chantilly", "price": "0,50€" }
+        ]
+      }
+    },
     "hours": [
       "Monday – Friday: 8am – 6pm",
       "Saturday – Sunday: 9am – 6pm"
@@ -63,6 +142,85 @@
         }
       ],
       "footer": "Et plus encore sur notre carte…"
+    },
+    "fullMenu": {
+      "pageTitle": "Notre Carte",
+      "sections": [
+        {
+          "title": "White Coffees",
+          "items": [
+            { "name": "Le Noisette", "description": "La base : le noisette. Pas de fausses notes : un expresso et un peu de lait.", "price": "3,80€" },
+            { "name": "Le Junior : le Cortado", "description": "Un double avec autant de lait ni plus ni moins (10cl).", "price": "4,00€" },
+            { "name": "Save the Cappuccino !", "description": "Un expresso avec un peu de lait et beaucoup de mousse. Cacao ou cannelle (180ml).", "price": "5,00€" },
+            { "name": "Flat White", "description": "Un double expresso mélangé à 150ml de lait pour garder une belle note de café.", "price": "5,50€" },
+            { "name": "Le Latte", "description": "30ml d'expresso mélangé à 240ml de lait pour la générosité.", "price": "5,00€" },
+            { "name": "Latte Caramel Beurre Salé Maison", "description": "30ml expresso, 180ml lait, caramel beurre salé maison.", "price": "6,50€" },
+            { "name": "Mokkaccino", "description": "30ml espresso, 180ml chocolat chaud.", "price": "5,50€" },
+            { "name": "Iced Latte", "description": "Des glaçons, du lait et un expresso versé au dessus.", "price": "5,00€" },
+            { "name": "Café Viennois", "description": "30ml espresso, in 210ml lait, chantilly.", "price": "" }
+          ]
+        },
+        {
+          "title": "Non-Coffee",
+          "items": [
+            { "name": "Unami : thés et infusions", "price": "5,50€" },
+            { "name": "Chocolat Chaud Valrhona", "description": "180ml lait, chocolat.", "price": "5,50€" },
+            { "name": "Chocolat Viennois", "description": "130ml lait, chocolat, chantilly.", "price": "5,50€" },
+            { "name": "Jus d'Orange BIO 25cl", "price": "4,50€" },
+            { "name": "Sodas Uma BIO", "price": "4,50€" },
+            { "name": "Matcha Latte BIO", "price": "6,50€" },
+            { "name": "Chai Latte BIO", "price": "5,50€" },
+            { "name": "Ube Latte BIO", "price": "5,50€" },
+            { "name": "Latte Sésame Noir BIO", "price": "5,50€" },
+            { "name": "Pumpkin Latte BIO", "price": "5,50€" },
+            { "name": "Golden Latte BIO", "price": "5,50€" }
+          ]
+        },
+        {
+          "title": "Expressos",
+          "items": [
+            { "name": "Quindío Gourmand", "description": "L'expresso Gourmand de Colombie — Lavé, très équilibré, avec des notes de Chocolat Noir.", "price": "2,80€" },
+            { "name": "Tanat \"Alo\"", "description": "Un café Éthiopien — Naturelle, sortie tout droit de l'air épais aux odeurs de jasmin de la région de Benso. De belles notes d'acidité, un café plutôt doux et aromatique aux notes d'agrûmes.", "price": "4,00€" },
+            { "name": "Typikah \"Tatacoa\"", "description": "Un très beau café Colombien — Naturelle Fermenté, de Nestor Lasso tout droit sorti du département de Huila au Sud de Bogota avec des notes d'orange sanguine & floral.", "price": "4,00€" },
+            { "name": "Tanat \"Kawa Blend\"", "description": "Honduras, Brésil & Guatemala. Lavée & Naturelle. Notes : Chocolat & Noisette.", "price": "4,00€" }
+          ]
+        },
+        {
+          "title": "Slow Coffee (V60)",
+          "items": [
+            { "name": "People Possession \"PPX\"", "description": "Éthiopie & Colombie. Nature / Co-Fermenté. Notes : Pêche & Nectarine.", "price": "7,00€" },
+            { "name": "People Possession \"Elto Elrora\"", "description": "Éthiopie. Nature. Notes : Fruits sec - Pêche - Thé Noir.", "price": "7,00€" },
+            { "name": "People Possession \"CIA\"", "description": "Colombie & Éthiopie. Lavé / Co-fermenté. Notes : Cerise - Orange - Banana Bread.", "price": "7,00€" },
+            { "name": "Tanat \"Alo\"", "description": "Éthiopie. Nature. Notes : Mûre - Zest d'orange - Thé noir.", "price": "7,00€" }
+          ]
+        },
+        {
+          "title": "Café au Comptoir",
+          "items": [
+            { "name": "Expresso", "description": "30ml", "price": "2,50€" },
+            { "name": "Double Expresso", "description": "60ml", "price": "3,50€" },
+            { "name": "Noisette", "price": "3,80€" },
+            { "name": "Macchiato", "price": "3,80€" }
+          ]
+        },
+        {
+          "title": "Et ceux qu'on aime bcp",
+          "items": [
+            { "name": "Cold Brew", "description": "Café froid infusé pendant la nuit.", "price": "5,00€" },
+            { "name": "Le Bicerin", "description": "Noisette, Pistache ou Spéculos.", "price": "6,50€" },
+            { "name": "Crémoso !", "description": "Lait, mousse de café maison.", "price": "6,00€" },
+            { "name": "Le Batch Brew", "description": "Un grand café filtre tout simple aux belles notes de chocolat et doux. Idéal le matin avec un petit croissant.", "price": "3,80€" }
+          ]
+        }
+      ],
+      "supplements": {
+        "title": "Suppléments",
+        "items": [
+          { "name": "Lait Végétaux", "description": "Avoine, amande, noix de Coco.", "price": "0,50€" },
+          { "name": "Sirops Maison", "description": "Vanille, Caramel, Noisette et Sirops maison du moment (les sirops maisons sont réalisés avec de la cassonade).", "price": "0,50€" },
+          { "name": "Chantilly", "price": "0,50€" }
+        ]
+      }
     },
     "hours": [
       "Lundi – Vendredi : 8h – 18h",
