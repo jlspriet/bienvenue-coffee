@@ -5,7 +5,7 @@ import Image from 'next/image';
 import content from '../content.json';
 
 const photos = [
-    { src: '/images/photo/DSC04533.jpg', alt: 'Bienvenue Coffee Shop' },
+    { src: '/images/photo/DSC04533.jpg', alt: 'Bienvenue Coffee Shop 1' },
     { src: '/images/photo/DSC04606.jpg', alt: 'Bienvenue Coffee Shop' },
     { src: '/images/photo/DSC04669.jpg', alt: 'Bienvenue Coffee Shop' },
     { src: '/images/photo/P1.jpg', alt: 'Bienvenue Coffee Shop' },
