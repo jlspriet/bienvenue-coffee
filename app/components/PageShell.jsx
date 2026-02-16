@@ -2,9 +2,10 @@
 
 import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import content from '../../content.json';
 
-export default function PageShell({ lang, setLang, children }) {
+export default function PageShell({ lang, setLang, backHref, children }) {
     const [scrolled, setScrolled] = useState(false);
     const heroLogoRef = useRef(null);
     const t = content[lang];
@@ -31,7 +32,16 @@ export default function PageShell({ lang, setLang, children }) {
             {/* Sticky Top Bar — full width */}
             <div className={`sticky top-0 z-10 h-14 -mx-6 px-6 sm:-mx-8 sm:px-8 transition-colors duration-200 ${scrolled ? 'bg-[#FCFCFC]' : ''}`}>
                 <div className="max-w-2xl mx-auto h-full flex items-center justify-between">
-                    <div className="w-[68px]" />
+                    {backHref ? (
+                        <Link
+                            href={backHref}
+                            className="btn btn-xs btn-ghost rounded-full border border-base-300 text-xs font-light px-3"
+                        >
+                            ← back
+                        </Link>
+                    ) : (
+                        <div className="w-[68px]" />
+                    )}
                     <div className={`transition-opacity duration-200 ${scrolled ? 'opacity-100' : 'opacity-0'}`}>
                         <Image
                             src="/images/logos/BIENVENUE_Isotype_colored-cropped.png"
@@ -41,19 +51,23 @@ export default function PageShell({ lang, setLang, children }) {
                             className="w-10 h-10"
                         />
                     </div>
-                    <div className="join join-horizontal rounded-full border border-base-300">
-                        <button
-                            className={`join-item btn btn-xs rounded-full border-0 text-xs font-light ${lang === 'fr' ? 'btn-active' : 'btn-ghost'}`}
-                            onClick={() => setLang('fr')}
-                        >
-                            fr
-                        </button>
-                        <button
-                            className={`join-item btn btn-xs rounded-full border-0 text-xs font-light ${lang === 'en' ? 'btn-active' : 'btn-ghost'}`}
-                            onClick={() => setLang('en')}
-                        >
-                            en
-                        </button>
+                    <div
+                        className="relative flex items-center rounded-full border border-base-300 cursor-pointer h-6 w-[68px] bg-base-100"
+                        onClick={() => setLang(lang === 'fr' ? 'en' : 'fr')}
+                        role="button"
+                        tabIndex={0}
+                        onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') setLang(lang === 'fr' ? 'en' : 'fr'); }}
+                    >
+                        <div
+                            className="absolute top-0.5 bottom-0.5 w-[30px] rounded-full bg-base-300 transition-transform duration-200 ease-in-out"
+                            style={{ left: 2, transform: lang === 'en' ? 'translateX(32px)' : 'translateX(0)' }}
+                        />
+                        <span className={`relative z-[1] flex-1 text-center text-xs font-light transition-opacity duration-200 ${lang === 'fr' ? 'opacity-100 font-medium' : 'opacity-40'}`}>
+                            FR
+                        </span>
+                        <span className={`relative z-[1] flex-1 text-center text-xs font-light transition-opacity duration-200 ${lang === 'en' ? 'opacity-100 font-medium' : 'opacity-40'}`}>
+                            EN
+                        </span>
                     </div>
                 </div>
             </div>

@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import content from '../content.json';
 import PageShell from './components/PageShell';
+import RichText from './components/RichText';
 
 const photos = [
     { src: '/images/photo/DSC04533.jpg', alt: 'Bienvenue Coffee Shop 1' },
@@ -54,18 +55,18 @@ export default function Home() {
 
             {/* Statement */}
             <section className="mt-16 max-w-sm mx-auto">
-                <p className="text-base-content/70 leading-snug text-left text-sm">
+                <RichText as="p" className="text-base-content/70 leading-snug text-left text-sm">
                     {t.statement}
-                </p>
+                </RichText>
             </section>
 
             {/* Menu */}
             <section className="mt-16 max-w-sm mx-auto">
                 {t.menu.sections.map((section, i) => (
                     <div key={i} className={i > 0 ? 'mt-10' : ''}>
-                        <h3 className="text-xl font-[550] text-[#bf8e39]/70 mb-4 font-serif">
+                        <RichText as="h3" className="text-xl font-[550] text-[#bf8e39]/70 mb-4 font-serif">
                             {section.title}
-                        </h3>
+                        </RichText>
                         <div className="space-y-0">
                             {section.items.map((item, j) => (
                                 <div key={j} className="flex items-baseline gap-2">
@@ -82,7 +83,7 @@ export default function Home() {
                     href="/carte"
                     className="block text-sm text-base-content/40 mt-6 italic hover:text-base-content/60 transition-colors"
                 >
-                    {t.menu.footer}
+                    <RichText>{t.menu.footer}</RichText>
                 </Link>
             </section>
 
