@@ -8,6 +8,10 @@
     "59800 Lille, France"
   ],
   "en": {
+    "nav": {
+      "home": "Home",
+      "menu": "Full Menu"
+    },
     "statement": "We are a specialty coffee shop. We care about doing good with what we have: offering filter coffee to take your time, fitness classes, and healthy bars. And we love the setting of the shop. It's an iconic boutique in Vieux-Lille with mouldings and a magnificent glass roof.",
     "menu": {
       "title": "Menu",
@@ -128,6 +132,10 @@
     ]
   },
   "fr": {
+    "nav": {
+      "home": "Accueil",
+      "menu": "Notre Carte"
+    },
     "statement": "Nous sommes un café de spécialité. Nous sommes attentifs à faire du bien avec nos moyens : en proposant du café en filtre pour prendre son temps, des cours de remises en forme et des barres healthy. Et enfin nous aimons l'écrin de la boutique. C'est une boutique emblématique du Vieux-Lille avec des moulures, une magnifique verrière.",
     "menu": {
       "title": "Menu",
