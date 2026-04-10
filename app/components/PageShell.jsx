@@ -3,9 +3,11 @@
 import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import content from '../../content.json';
 
-export default function PageShell({ lang, setLang, backHref, children }) {
+export default function PageShell({ lang, setLang, children }) {
+    const pathname = usePathname();
     const [scrolled, setScrolled] = useState(false);
     const heroLogoRef = useRef(null);
     const t = content[lang];
@@ -32,16 +34,20 @@ export default function PageShell({ lang, setLang, backHref, children }) {
             {/* Sticky Top Bar — full width */}
             <div className={`sticky top-0 z-10 h-14 -mx-6 px-6 sm:-mx-8 sm:px-8 transition-colors duration-200 ${scrolled ? 'bg-[#FCFCFC]' : ''}`}>
                 <div className="max-w-2xl mx-auto h-full flex items-center justify-between">
-                    {backHref ? (
-                        <Link
-                            href={backHref}
-                            className="btn btn-xs btn-ghost rounded-full border border-base-300 text-xs font-light px-3"
-                        >
-                            ← back
-                        </Link>
-                    ) : (
-                        <div className="w-[68px]" />
-                    )}
+                    <nav className="flex items-center gap-1">
+                        {[
+                            { href: '/', label: t.nav.home },
+                            { href: '/carte', label: t.nav.menu },
+                        ].map(({ href, label }) => (
+                            <Link
+                                key={href}
+                                href={href}
+                                className={`btn btn-xs btn-ghost rounded-full text-xs font-light px-3 ${pathname === href ? 'border border-base-300 font-medium' : ''}`}
+                            >
+                                {label}
+                            </Link>
+                        ))}
+                    </nav>
                     <div className={`transition-opacity duration-200 ${scrolled ? 'opacity-100' : 'opacity-0'}`}>
                         <Image
                             src="/images/logos/BIENVENUE_Isotype_colored-cropped.png"

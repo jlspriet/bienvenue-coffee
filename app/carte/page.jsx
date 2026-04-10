@@ -11,7 +11,7 @@ export default function CartePage() {
     const menu = t.fullMenu;
 
     return (
-        <PageShell lang={lang} setLang={setLang} backHref="/">
+        <PageShell lang={lang} setLang={setLang}>
             {/* Menu Sections */}
             <div className="mt-12 max-w-sm mx-auto">
                 {menu.sections.map((section, i) => (
