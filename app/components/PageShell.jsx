@@ -40,7 +40,12 @@ export default function PageShell({ lang, setLang, backHref, children }) {
                             ← back
                         </Link>
                     ) : (
-                        <div className="w-[68px]" />
+                        <Link
+                            href="/carte"
+                            className="btn btn-xs btn-ghost rounded-full border border-base-300 text-xs font-light px-3"
+                        >
+                            {t.fullMenu.pageTitle}
+                        </Link>
                     )}
                     <div className={`transition-opacity duration-200 ${scrolled ? 'opacity-100' : 'opacity-0'}`}>
                         <Image
